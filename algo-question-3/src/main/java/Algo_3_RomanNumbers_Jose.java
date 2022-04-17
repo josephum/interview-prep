@@ -40,13 +40,13 @@ public class Algo_3_RomanNumbers_Jose {
     public static void main(String[] args) {
 //        System.out.println(romanToInt("MCMXCIV"));
 //        System.out.println(romanToInt("LVIII"));
-        System.out.println(romanToInt("MMMCDLXXXVIII")); // 3488
+//        System.out.println(romanToInt("MMMCDLXXXVIII")); // 3488
+//        System.out.println(romanToInt("MDCCCLXXXIV")); // 1884
+        System.out.println(romanToInt("MCMXCIV")); // 1994
     }
 
     public static int romanToInt(String str) {
 
-
-        int res = 0;
         Map<String, Integer> map1 = new HashMap<>();
         map1.put("IV", 4);
         map1.put("IX", 9);
@@ -68,18 +68,24 @@ public class Algo_3_RomanNumbers_Jose {
         int number = 0;
 
         while (!str.isEmpty()) {
+            boolean found = false;
 
             for (Map.Entry<String, Integer> entry : map1.entrySet()) {
                 if (str.startsWith(entry.getKey())) {
                     number += entry.getValue();
                     str = str.replaceFirst(entry.getKey(), "");
+                    found=true;
+                    break;
                 }
             }
+
+            if (found) continue;
 
             for (Map.Entry<String, Integer> entry : map2.entrySet()) {
                 if (str.startsWith(entry.getKey())) {
                     number += entry.getValue();
                     str = str.replaceFirst(entry.getKey(), "");
+                    break;
                 }
             }
 
