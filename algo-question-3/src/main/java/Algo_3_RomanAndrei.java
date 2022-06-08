@@ -1,4 +1,4 @@
-package a3romanToInteger.Andrei;
+
 
 import java.util.HashMap;
 import java.util.Map;
@@ -8,7 +8,8 @@ public class Algo_3_RomanAndrei {
 
     public static void main(String[] args) {
 //        System.out.println(romanToInt("MCMXCIV"));
-        System.out.println(romanToInt("XLIV"));
+//        System.out.println(romanToInt("XLIV"));
+        System.out.println(romanToInt("MCMXCIV")); // 1994
     }
 
     public static int romanToInt(String str) {
